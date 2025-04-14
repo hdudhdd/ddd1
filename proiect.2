@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Tonomat {
+private:
+    int stoc;
+
+public:
+    // Constructor
+    Tonomat() {
+        stoc = 3;
+        cout << "Tonomatul a fost pornit cu 3 sucuri." << endl;
+    }
+
+    // Metodă pentru cumpărare
+    void cumpara() {
+        if (stoc > 0) {
+            cout << "Ai cumparat un suc. Pofta buna!" << endl;
+            stoc--;
+        } else {
+            cout << "Stoc epuizat!" << endl;
+        }
+    }
+
+    // Destructor
+    ~Tonomat() {
+        cout << "Tonomatul a fost oprit." << endl;
+    }
+};
+
+int main() {
+    Tonomat t;
+    int alegere;
+
+    do {
+        cout << "\nApasa 1 pentru a cumpara un suc, 0 pentru a iesi: ";
+        cin >> alegere;
+
+        if (alegere == 1) {
+            t.cumpara();
+        } else if (alegere != 0) {
+            cout << "Optiune invalida." << endl;
+        }
+
+    } while (alegere != 0);
+
+    return 0;
+}
